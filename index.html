@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi App Empresa</title>
+</head>
+<body>
+
+<h2>Registro de datos</h2>
+
+<input id="dato" placeholder="Escribe algo">
+<button onclick="guardar()">Guardar</button>
+
+<h3>Estado: <span id="estado">🔴 Offline</span></h3>
+
+<h3>Datos enviados:</h3>
+<ul id="lista"></ul>
+
+<script>
+const URL = "https://mi-servidor-mypk.onrender.com";
+
+// guardar local
+function guardar() {
+  let valor = document.getElementById("dato").value;
+
+  let cola = JSON.parse(localStorage.getItem("cola")) || [];
+

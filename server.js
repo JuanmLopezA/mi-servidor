@@ -1,6 +1,6 @@
-const express = require("express");
-const app = express();
+import express from "express";
 
+const app = express();
 app.use(express.json());
 
 let datos = [];
@@ -10,14 +10,14 @@ app.get("/", (req, res) => {
   res.send("OK servidor");
 });
 
-// endpoint API ✅
+// API
 app.post("/api", (req, res) => {
   console.log("Recibido:", req.body);
   datos.push(req.body);
   res.json({ ok: true });
 });
 
-// ver datos ✅
+// ver datos
 app.get("/data", (req, res) => {
   res.json(datos);
 });
